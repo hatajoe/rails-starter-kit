@@ -1,0 +1,62 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Rails:
+  Enabled: true
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.6
+
+# following lines disable cops which decrease developer experience
+
+Layout/LineLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# following lines exclude cops which detect errors in initial files of Rails
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/**/*'
+
+Style/StringLiterals:
+  Exclude:
+    - 'config/puma.rb'
+    - 'config/spring.rb'
+    - 'spec/rails_helper.rb'
+    - 'test/**/*'
+
+Style/SymbolArray:
+  Exclude:
+    - 'Gemfile'
+
+# The following cops were added to RuboCop v0.81
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+# The following cops were added to RuboCop v0.80
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true

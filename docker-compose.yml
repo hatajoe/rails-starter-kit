@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7.29
+    volumes:
+      - binlog:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+     - "3306:3306"
+volumes:
+  binlog:
+    driver: local
